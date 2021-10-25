@@ -15,3 +15,9 @@ const gcd = function(arr) {
 
 const array = [2,3,5,10]
 console.log(gcd(array))
+
+const gcd2 = (num1, num2) => {
+    return num1 % num2 === 0 ? num2 : gcd2(num2, num1 % num2)
+}
+
+console.log(gcd2(24, 60))
