@@ -13,3 +13,18 @@ const findPower = (base, power) => {
 }
 
 console.log(findPower(2,3))
+
+// power of 2
+const power = (n) => {
+    if(n===0) return 1;
+
+    let smallAnswer = power(n/2)
+
+    if(n&1) {
+        return 2*smallAnswer*smallAnswer
+    }else {
+        return smallAnswer*smallAnswer
+    }
+}
+
+console.log(power(10))
