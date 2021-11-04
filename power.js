@@ -28,3 +28,14 @@ const power = (n) => {
 }
 
 console.log(power(10))
+
+const powerOf2 = (n) => {
+    if(n <= 0) return false;
+    while(n % 2 === 0){
+        n /= 2;
+    }
+
+    return (n===1)
+}
+
+console.log(powerOf2(8))
