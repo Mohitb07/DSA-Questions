@@ -1,15 +1,17 @@
 const binaryToDecimal = (number) => {
   let answer = 0;
   let i = 0;
-  let digit;
   while (number !== 0) {
-    digit = number & 1;
-    answer = digit * 10 ** i + answer;
+    let digit = number % 10;
+    if (digit === 1) {
+      answer = answer + 2 ** i;
+    }
+    number = Math.floor(number / 10);
     i++;
-    number = number >> 1;
   }
 
   return answer;
 };
 
-console.log(reverseOfNumber(128));
+//NOTE :- (lang specific) ASSUMING NO LEADING 0's IN THE NUMBER BECAUSE THE JAVASCRIPT REPRESENTS THE LEADING 0's VALUES AS THE OCTAL VALUES
+console.log(binaryToDecimal(010));
