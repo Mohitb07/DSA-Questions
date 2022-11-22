@@ -14,4 +14,4 @@ const binaryToDecimal = (number) => {
 };
 
 //NOTE :- (lang specific) ASSUMING NO LEADING 0's IN THE NUMBER BECAUSE THE JAVASCRIPT REPRESENTS THE LEADING 0's VALUES AS THE OCTAL VALUES
-console.log(binaryToDecimal(010));
+console.log(binaryToDecimal(001));

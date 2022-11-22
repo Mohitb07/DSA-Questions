@@ -3,25 +3,25 @@
 */
 
 function sockMerchant(n, ar) {
-    var counter = {}
-    var pair = 0;
-    // [1, 1, 3 ,1 ,2 ,1 ,3 ,3 ,3 ,3]
-    for(let i = 0; i<n; i++) {
-        if (ar[i] in counter){
-            counter[ar[i]]++;
-        } else {
-            counter[ar[i]] = 1;
-        }
+  var counter = {};
+  var pair = 0;
+  // [1, 1, 3 ,1 ,2 ,1 ,3 ,3 ,3 ,3]
+  // O(N)
+  for (let i = 0; i < n; i++) {
+    if (ar[i] in counter) {
+      counter[ar[i]]++;
+    } else {
+      counter[ar[i]] = 1;
     }
-    
-    for(const item in counter) {
-        pair += Math.floor(counter[item]/2);
-    }
-    
-    return pair;
+  }
 
+  for (const item in counter) {
+    pair += Math.floor(counter[item] / 2);
+  }
+
+  return pair;
 }
 
-const array = [1, 1, 3 ,1 ,2 ,1 ,3 ,3 ,3 ,3]
+const array = [1, 1, 3, 1, 2, 1, 3, 3, 3, 3];
 
-console.log(sockMerchant(array.length, array))
+console.log(sockMerchant(array.length, array));
