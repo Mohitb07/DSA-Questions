@@ -31,5 +31,25 @@ const rotation = (arr, d, size) => {
     return arr;
 }
 
+const reverse = (arr, start, end) => {
+    while(start < end){
+        let temp = arr[start]
+        arr[start] = arr[end]
+        arr[end] = temp
+        start++
+        end--
+    }
+}
+
+// right rotate optimized solution
+const rotateRight = (arr, k, n) => {
+    k%= arr.length
+    reverse(arr, 0, n - 1)
+    reverse(arr, 0, k - 1)
+    reverse(arr, k, n - 1)
+    return arr;
+}
+
+
 const array = [1, 2, 3, 4, 5, 6, 7]
-console.log(rotation(array, 2, array.length))
+console.log(rotateRight(array, 2, array.length))
