@@ -20,7 +20,7 @@ class Stack {
     }
 
     length(){
-      return this.top;
+      return this.top + 1;
     }
     
     pop(){
@@ -67,7 +67,6 @@ class Stack {
   // console.log(s.pop())
   // console.log(s.pop())
   // console.log(s.pop())
-  // console.log(s.length())
+  // console.log('length', s.length())
   // console.log(s.showStack())
-  // console.log(s.peek());
   // console.log(s.isEmpty());
