@@ -60,7 +60,57 @@ const generatePascalTriangle = function (numRows) {
     triangle.push(row);
   }
 
-  return triangle;
+  return triangle[2];
 };
 
 console.log(generatePascalTriangle(5));
+
+/* Given an integer rowIndex, return the rowIndexth (0-indexed) row of the Pascal's triangle.
+
+In Pascal's triangle, each number is the sum of the two numbers directly above it as shown:
+
+Example 1:
+Input: rowIndex = 3
+Output: [1,3,3,1]
+
+Example 2:
+Input: rowIndex = 0
+Output: [1]
+
+Example 3:
+Input: rowIndex = 1
+Output: [1,1]
+*/
+
+const getRow = function (rowIndex) {
+  const result = [];
+  for (let i = 0; i <= rowIndex; i++) {
+    const row = [];
+    let num = 1;
+    row.push(num);
+    for (let j = 1; j <= i; j++) {
+      num = (num * (i - j + 1)) / j;
+      row.push(num);
+    }
+    result.push(row);
+  }
+  return result[rowIndex];
+};
+
+console.log(getRow(3));
+
+const getRow2 = function (rowIndex) {
+  const row = [1];
+  for (let i = 1; i <= rowIndex; i++) {
+    let prev = 1;
+    for (let j = 1; j < i; j++) {
+      const current = prev + row[j];
+      prev = row[j];
+      row[j] = current;
+    }
+    row.push(1);
+  }
+  return row;
+};
+
+console.log(getRow(3));
