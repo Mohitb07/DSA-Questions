@@ -20,11 +20,14 @@ const product = (arr) => {
   const caseZeroResult = Array(arr.length).fill(0);
   const caseNoZeroResult = Array(arr.length);
   let containsZero = false;
+  let zeroCount = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === 0) {
       containsZero = true;
+      zeroCount++;
       caseZeroResult[i] = totalProducts;
     }
+    if (zeroCount > 1) return Array(arr.length).fill(0);
   }
   for (let i = 0; i < arr.length; i++) {
     caseNoZeroResult[i] = totalProducts / arr[i];
@@ -36,6 +39,7 @@ const product = (arr) => {
 console.log(product([1, 2, 3, 4]));
 console.log(product([0, 1, 2, 3]));
 console.log(product([1, 2, 3, 0]));
+console.log(product([0, 2, 3, 0]));
 
 const product2 = (arr) => {
   let result = [];
@@ -55,3 +59,4 @@ const product2 = (arr) => {
 console.log(product2([1, 2, 3, 4]));
 console.log(product2([0, 1, 2, 3]));
 console.log(product2([1, 2, 3, 0]));
+console.log(product([0, 2, 3, 0]));
