@@ -120,3 +120,26 @@ function missingNumber6(nums) {
 }
 
 // console.log(missingNumber6([3, 0, 1])); // 2
+
+// Binary Search (if sorted)
+// Time: O(n log n)
+// Space: O(1)
+
+function missingNumber7(nums) {
+  let low = 0;
+  let high = nums.length - 1;
+
+  while(low <= high){
+    const mid = Math.floor(low + (high - low) /2)
+
+    if(nums[mid] === mid){
+      low = mid + 1;
+    }else {
+      high = mid - 1;
+    }
+  }
+
+  return low;
+}
+
+console.log(missingNumber7([0, 1 ,3])); // 2
