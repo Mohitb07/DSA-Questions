@@ -99,12 +99,12 @@ const maximumAreaHistogram = (arr) => {
 
   const leftIndexs = nearestSmallerLeft(arr);
   const rightIndexs = nearestSmallerRight(arr);
-  
+
   for (let i = 0; i < arr.length; i++) {
     const width = rightIndexs[i] - leftIndexs[i] - 1;
     const height = arr[i];
     const currentBarArea = height * width;
-    result[i] = currentBarArea
+    result[i] = currentBarArea;
   }
   return Math.max(...result);
 };
@@ -124,7 +124,7 @@ const maxArea = (arr, m, n) => {
         aux[j] = aux[j] + arr[i][j];
       }
     }
-    max = Math.max(max, maximumAreaHistogram(aux))
+    max = Math.max(max, maximumAreaHistogram(aux));
   }
 
   return max;
@@ -137,4 +137,11 @@ const arr = [
   [1, 1, 0, 0],
 ];
 
-console.log(maxArea(arr, 4, 4));
+const arr2 = [
+  [1, 0, 1, 0, 0],
+  [1, 0, 1, 1, 1],
+  [1, 1, 1, 1, 1],
+  [1, 0, 0, 1, 0],
+];
+
+console.log(maxArea(arr2, 5, 4));
